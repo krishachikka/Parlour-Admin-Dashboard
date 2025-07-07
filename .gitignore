@@ -1,0 +1,27 @@
+# Node modules
+frontend-parlour-dashboard/node_modules/
+backend-parlour-api/node_modules/
+
+# Build output
+frontend-parlour-dashboard/.next/
+frontend-parlour-dashboard/out/
+frontend-parlour-dashboard/.turbo/
+frontend-parlour-dashboard/.cache/
+backend-parlour-api/dist/
+
+# Env files
+frontend-parlour-dashboard/.env
+backend-parlour-api/.env
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VS Code settings (optional)
+.vscode/
