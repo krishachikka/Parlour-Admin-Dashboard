@@ -61,7 +61,7 @@ export default function EmployeesPage() {
 
   const fetchEmployees = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/employees', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/employees`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -86,8 +86,8 @@ export default function EmployeesPage() {
 
     const method = editingId ? 'PUT' : 'POST';
     const url = editingId
-      ? `http://localhost:5000/api/employees/${editingId}`
-      : 'http://localhost:5000/api/employees';
+      ? `${process.env.NEXT_PUBLIC_API_URL}/api/employees/${editingId}`
+      : `${process.env.NEXT_PUBLIC_API_URL}/api/employees`;
 
     try {
       const res = await fetch(url, {
@@ -123,7 +123,7 @@ export default function EmployeesPage() {
 
   const handleDelete = async (id: string) => {
     try {
-      await fetch(`http://localhost:5000/api/employees/${id}`, {
+      await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/employees/${id}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` },
       });

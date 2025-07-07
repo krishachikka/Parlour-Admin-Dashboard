@@ -67,7 +67,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     const fetchEmployees = async () => {
-      const res = await fetch('http://localhost:5000/api/employees', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/employees`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -75,7 +75,7 @@ export default function Dashboard() {
     };
 
     const fetchTasks = async () => {
-      const res = await fetch('http://localhost:5000/api/tasks', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tasks`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -96,8 +96,8 @@ export default function Dashboard() {
 
     const method = editingId ? 'PUT' : 'POST';
     const url = editingId
-      ? `http://localhost:5000/api/tasks/${editingId}`
-      : 'http://localhost:5000/api/tasks';
+      ? `${process.env.NEXT_PUBLIC_API_URL}/api/tasks/${editingId}`
+      : `${process.env.NEXT_PUBLIC_API_URL}/api/tasks`;
 
     try {
       const res = await fetch(url, {
@@ -115,7 +115,7 @@ export default function Dashboard() {
         return;
       }
 
-      const taskRes = await fetch('http://localhost:5000/api/tasks', {
+      const taskRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tasks`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await taskRes.json();
@@ -135,7 +135,7 @@ export default function Dashboard() {
 
   const handleDelete = async (id: string) => {
     try {
-      await fetch(`http://localhost:5000/api/tasks/${id}`, {
+      await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tasks/${id}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` },
       });

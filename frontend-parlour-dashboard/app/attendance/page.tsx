@@ -55,7 +55,7 @@ export default function AttendancePage() {
 
     const fetchAttendance = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/attendance', {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/attendance`, {
           headers: {
             Authorization: `Bearer ${token}`,
             'Content-Type': 'application/json',
@@ -83,7 +83,7 @@ export default function AttendancePage() {
     fetchAttendance();
 
     // Socket.IO setup
-    const socket = io('http://localhost:5000', {
+    const socket = io(`${process.env.NEXT_PUBLIC_API_URL}`, {
       auth: { token },
     });
 
