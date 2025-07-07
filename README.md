@@ -1,10 +1,13 @@
 # Parlour Admin Dashboard
 
-A full-stack web-based dashboard system for managing a parlour business — featuring **role-based access control**, **employee task management**, and **live real-time attendance tracking** using **WebSockets**.
+A full-stack web-based dashboard system for managing a parlour business - featuring **role-based access control**, **employee task management**, and **live real-time attendance tracking** using **WebSockets**.
 
 ### Live Demo
 
 🌐 [Visit Live Site](https://parlour-krisha.vercel.app/)
+
+### Demo Video
+https://github.com/user-attachments/assets/03c0c306-3546-48a5-bd66-72d7b4089cba
 
 ---
 
