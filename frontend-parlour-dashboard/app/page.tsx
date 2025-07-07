@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -6,7 +5,11 @@ export default function Home() {
     <div className="min-h-screen font-sans bg-white text-gray-800">
       {/* Hero Section */}
       <section className="flex flex-col items-center justify-center text-center px-6 py-20 bg-red-950 text-white">
-        <Link href='/login'><button className="absolute top-0 right-0 cursor-pointer p-2 px-4 m-2 rounded-full bg-black/20"> Login </button></Link>
+        <Link href="/login">
+          <button className="absolute top-0 right-0 cursor-pointer p-2 px-4 m-2 rounded-full bg-black/20">
+            Login
+          </button>
+        </Link>
         <h1 className="text-4xl sm:text-5xl font-bold mb-4">
           Welcome to Parlour
         </h1>
@@ -35,12 +38,7 @@ export default function Home() {
             { title: "Spa Therapy", icon: "/icons/spa.png" },
           ].map((service, idx) => (
             <div key={idx} className="flex flex-col items-center bg-white rounded-2xl h-20">
-              {/* <Image
-                src={service.icon}
-                alt={service.title}
-                width={60}
-                height={60}
-              /> */}
+              {/* Icon can be re-enabled if needed */}
               <h3 className="mt-4 text-lg font-medium">{service.title}</h3>
             </div>
           ))}
@@ -53,17 +51,17 @@ export default function Home() {
         <div className="max-w-4xl mx-auto space-y-8">
           {[
             {
-              name: "Priya S.",
+              name: "ABCD",
               quote:
                 "Absolutely loved the service. The facial left my skin glowing and soft!",
             },
             {
-              name: "Anjali M.",
+              name: "EFGH",
               quote:
                 "Professional staff and a relaxing environment. Highly recommend their spa treatments!",
             },
             {
-              name: "Ritika D.",
+              name: "IJKL",
               quote:
                 "Got my wedding makeup done here. The results were stunning and flawless!",
             },
@@ -72,7 +70,7 @@ export default function Home() {
               key={idx}
               className="bg-white shadow-md p-6 rounded-lg border border-pink-100"
             >
-              <p className="italic mb-2">"{testimonial.quote}"</p>
+              <p className="italic mb-2">&ldquo;{testimonial.quote}&rdquo;</p>
               <h4 className="font-semibold">— {testimonial.name}</h4>
             </div>
           ))}
@@ -95,7 +93,9 @@ export default function Home() {
             WhatsApp
           </a>
         </div>
-        <p className="mt-6 text-sm text-white/80">© 2025 Bliss Beauty Parlour. All rights reserved.</p>
+        <p className="mt-6 text-sm text-white/80">
+          © 2025 Bliss Beauty Parlour. All rights reserved.
+        </p>
       </footer>
     </div>
   );

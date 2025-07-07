@@ -26,7 +26,6 @@ interface Employee {
   isClockedIn: boolean;
 }
 
-// ✅ highlightMatch utility
 function highlightMatch(text: string, search: string) {
   if (!search) return text;
   const parts = text.split(new RegExp(`(${search})`, 'gi'));
@@ -47,7 +46,6 @@ export default function EmployeesPage() {
   const [roleField, setRoleField] = useState('');
   const [editingId, setEditingId] = useState<string | null>(null);
   const [isOpen, setIsOpen] = useState(false);
-  const [deleteId, setDeleteId] = useState<string | null>(null);
   const [role, setRole] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
 
